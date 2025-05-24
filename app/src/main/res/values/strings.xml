@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Veículos App</string>
+    <string name="login">Entrar</string>
+    <string name="register">Cadastrar</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="confirm_password">Confirmar Senha</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="vehicle_list">Lista de Veículos</string>
+    <string name="add_vehicle">Adicionar Veículo</string>
+    <string name="edit_vehicle">Editar Veículo</string>
+    <string name="delete_vehicle">Excluir Veículo</string>
+    <string name="owner_name">Nome do Proprietário</string>
+    <string name="brand">Marca</string>
+    <string name="model">Modelo</string>
+    <string name="plate">Placa</string>
+    <string name="year">Ano</string>
+    <string name="color">Cor</string>
+    <string name="fuel_type">Tipo de Combustível</string>
+    <string name="mileage">Quilometragem</string>
+    <string name="notes">Observações</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="search">Pesquisar</string>
+    <string name="logout">Sair</string>
+    <string name="delete_confirmation">Tem certeza que deseja excluir este veículo?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="required_field">Campo obrigatório</string>
+    <string name="invalid_plate">Placa inválida</string>
+    <string name="loading">Carregando...</string>
+    <string name="error_occurred">Ocorreu um erro</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="success">Operação realizada com sucesso</string>
+</resources>
