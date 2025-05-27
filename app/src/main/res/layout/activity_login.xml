@@ -73,5 +73,4 @@
         android:layout_marginTop="15dp"
         android:indeterminateTint="@color/primary"
         android:visibility="gone"/>
-
 </LinearLayout>
