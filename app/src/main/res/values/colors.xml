@@ -12,4 +12,5 @@
     <color name="black">#000000</color>
     <color name="error">#B00020</color>
     <color name="success">#4CAF50</color>
+    <color name="blue_material">#2196F3</color>
 </resources>
