@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,10 +34,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    viewBinding{
+        enable = true
+    }
 }
 
 dependencies {
-
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
