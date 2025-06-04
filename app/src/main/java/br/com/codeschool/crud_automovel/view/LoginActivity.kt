@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.codeschool.crud_automovel.databinding.ActivityLoginBinding
 import br.com.codeschool.crud_automovel.viewmodel.AutenticacaoViewModel
-
+import com.google.firebase.auth.FirebaseAuth
 
 
 //Apresenta tela de login do app
@@ -19,8 +19,8 @@ class LoginActivity: AppCompatActivity() {
     //Variável para o ViewModel que gerencia a autenticação
     private lateinit var viewModel: AutenticacaoViewModel //viewmodel -modelo de autenticação
 
-    override fun onCreate(savedInstance: Bundle?) {
-        super.onCreate(savedInstance)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -28,6 +28,11 @@ class LoginActivity: AppCompatActivity() {
 
         configurarListeners()
         configurarObservers()
+
+        //Verificar se o usuário já está logado
+        if(FirebaseAuth.getInstance().currentUser != null){
+            navegarParaListaVeiculos()
+        }
     }
 
     private fun configurarListeners() {
@@ -67,17 +72,40 @@ class LoginActivity: AppCompatActivity() {
             }
         }
         viewModel.usuarioLogado.observe(this) { sucesso ->
-            if (sucesso){
+            if (sucesso) {
                 irParaListaVeiculos()
                 viewModel.limparSucessoLogin()
             }
         }
 
-        viewModel.resetSenhaSucesso.observe(this) { sucesso  ->
+        viewModel.resetSenhaSucesso.observe(this) { sucesso ->
             if (sucesso) {
-                Toast.makeText(this, "E-mail de recuperação de senha enviado com sucesso", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "E-mail de recuperação de senha enviado com sucesso",
+                    Toast.LENGTH_SHORT
+                ).show()
                 viewModel.limparResetSenhaSucesso()
             }
         }
     }
-}
+
+    private fun validarEntradas(email: String, senha: String): Boolean {
+            var eValido = true
+
+            if (email.isEmpty()) {
+                binding.editEmail.error = "Campo obrigatório"
+                eValido = false
+            }
+
+            if (senha.isEmpty()) {
+                binding.editSenha.error = "Campo obrigatório"
+                eValido = false
+            }
+            return eValido
+        }
+        private fun navegarParaListaVeiculos(){
+            startActivity(Intent(this,ListaVeiculosActivity::class.java))
+            finish()
+        }
+    }
