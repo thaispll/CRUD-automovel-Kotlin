@@ -73,7 +73,7 @@ class LoginActivity: AppCompatActivity() {
         }
         viewModel.usuarioLogado.observe(this) { sucesso ->
             if (sucesso) {
-                irParaListaVeiculos()
+                navegarParaListaVeiculos()
                 viewModel.limparSucessoLogin()
             }
         }
