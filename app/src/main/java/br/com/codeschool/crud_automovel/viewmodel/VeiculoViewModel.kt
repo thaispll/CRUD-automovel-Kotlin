@@ -102,6 +102,20 @@ class VeiculoViewModel: ViewModel() {
             }
         }
     }
+    fun buscarVeiculos(consulta: String) {
+        viewModelScope.launch {
+            _loading.value = true
+            try {
+                val listaVeiculos = repository.buscarVeiculos(consulta)
+                _veiculos.value = listaVeiculos
+                _erro.value = null
+            } catch (e: Exception) {
+                _erro.value = e.message
+            } finally {
+                _loading.value = false
+            }
+        }
+    }
 
     fun limparErro(){
         _erro.value = null
@@ -110,9 +124,5 @@ class VeiculoViewModel: ViewModel() {
     fun limparOperacaoSucesso(){
         _operacaoSucesso.value = false
     }
-
-
-
-
 
 }

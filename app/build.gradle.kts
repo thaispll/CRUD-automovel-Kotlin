@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.runtime.saved.instance.state)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.car.ui.lib)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -64,14 +64,13 @@
         android:background="@drawable/botao_retangular"/>
 
     <TextView
-        android:id="@+id/tvRegistrar"
+        android:id="@+id/tvLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Entrar"
         android:textColor="@color/primary"
         android:gravity="center"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@drawa"/>
+        android:layout_marginBottom="16dp"/>
 
     <ProgressBar
         android:id="@+id/barraDeProgresso"
