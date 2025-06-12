@@ -7,6 +7,7 @@ import br.com.codeschool.crud_automovel.databinding.ItemVeiculoBinding
 import br.com.codeschool.crud_automovel.model.Veiculo
 import br.com.codeschool.crud_automovel.viewmodel.VeiculoViewModel
 
+
 class VeiculoAdapter (
     private var veiculos: List<Veiculo>,
     private val aoClicarNoItem: (Veiculo) -> Unit
